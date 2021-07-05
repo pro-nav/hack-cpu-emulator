@@ -1,5 +1,6 @@
 #include "consoleGUI.h"
 
+
 consoleGUI::consoleGUI()
 {
 	SetConsoleActiveScreenBuffer(hConsole);

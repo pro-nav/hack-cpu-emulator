@@ -17,6 +17,7 @@ public:
 	void draw();
 	void writeStr(int x, int y, std::string c);
 	void writeStr(int x, int y, std::bitset<16> b);
+
 };
 
 
