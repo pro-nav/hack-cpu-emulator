@@ -1,34 +1,63 @@
 #include <iostream>
+#include <fstream>
 #include <bitset>
+#include <string>
+#include <vector>
+#include <sstream>
+//#include <chrono>
+
 #include "CPU.h"
+#include "consoleGUI.h"
 
 int main(int argc, char** argv) {
-	
-	CPU cpu;
-	int p_size = 16;
-	std::bitset<16> p[] = {
-		0b0000000000000000,
-		0b1111110000010000,
-		0b0000000000000001,
-		0b1111010011010000,
-		0b0000000000001010,
-		0b1110001100000001,
-		0b0000000000000001,
-		0b1111110000010000,
-		0b0000000000001100,
-		0b1110101010000111,
-		0b0000000000000000,
-		0b1111110000010000,
-		0b0000000000000010,
-		0b1110001100001000,
-		0b0000000000001110,
-		0b1110101010000111
-	};
 
-	cpu.setMemory(0, 44);
-	cpu.setMemory(1, 23);
-	cpu.loadProgram(p, p_size);
-	cpu.run();
+	std::string filename;
+
+	if (argc > 1) {
+		filename = argv[1];
+	}
+	else {
+		std::cerr << "No File Specified." << std::endl;
+		return 1;
+	}
+
+	std::ifstream file;
+	file.open(filename, std::ios::in | std::ios::binary);
+	if (!file.is_open()) {
+		std::cerr << filename << " not found." << std::endl;
+		return 1;
+	}
+
+	std::cout << filename << " found. Loading . . . " << std::endl << std::endl;
+
+	std::vector<std::bitset<16>> program;
+	std::bitset<16> instruction;
+	std::string line;
+
+	while (std::getline(file, line))
+	{
+		std::istringstream iss(line);
+		iss >> instruction;
+		program.push_back(instruction);
+	}
+
+	file.close();
+
+	CPU cpu;
+	cpu.loadProgram(&program[0], program.size());
+
+	consoleGUI console;
+
+	//auto tp1 = std::chrono::system_clock::now();
+	//auto tp2 = std::chrono::system_clock::now();
+
+	while (true)
+	{
+
+
+
+		console.draw();
+	}
 
 
 	return 0;

@@ -133,14 +133,3 @@ void CPU::execute() {
 	}
 
 }
-
-void CPU::run()
-{
-	while (true)
-	{
-		execute();
-		std::cout << PrgCtr << " : " << RAM.read(2) << std::endl;
-		std::system("pause");
-	}
-}
-
