@@ -1,5 +1,4 @@
-﻿# CMakeList.txt : CMake project for hack-cpu-emulator, include source and define
-# project specific logic here.
+# CMakeList.txt : CMake project for hack-cpu-emulator
 
 cmake_minimum_required (VERSION 3.8)
 
