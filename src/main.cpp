@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <bitset>
 #include <string>
@@ -10,6 +10,8 @@
 #include "consoleGUI.h"
 
 int main(int argc, char** argv) {
+
+
 
 	std::string filename;
 
@@ -50,11 +52,12 @@ int main(int argc, char** argv) {
 
 	//auto tp1 = std::chrono::system_clock::now();
 	//auto tp2 = std::chrono::system_clock::now();
+	std::bitset<16> scr[8192];
 
 	while (true)
 	{
-
-		console.draw();
+		cpu.getSCR(scr);
+		console.draw(scr);
 	}
 
 

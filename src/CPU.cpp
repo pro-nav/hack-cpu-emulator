@@ -133,3 +133,8 @@ void CPU::execute() {
 	}
 
 }
+
+void CPU::getSCR(std::bitset<16>* scr)
+{
+	RAM.getSCRdata(scr);
+}
