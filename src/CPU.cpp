@@ -134,7 +134,7 @@ void CPU::execute() {
 
 }
 
-void CPU::getSCR(std::bitset<16>* scr)
+const std::bitset<16>* CPU::getSCR()
 {
-	RAM.getSCRdata(scr);
+	return RAM.getSCRAddr();
 }

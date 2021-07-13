@@ -4,14 +4,11 @@
 #include <string>
 #include <vector>
 #include <sstream>
-//#include <chrono>
 
 #include "CPU.h"
 #include "consoleGUI.h"
 
 int main(int argc, char** argv) {
-
-
 
 	std::string filename;
 
@@ -48,18 +45,13 @@ int main(int argc, char** argv) {
 	CPU cpu;
 	cpu.loadProgram(&program[0], program.size());
 
-	consoleGUI console;
+	while (true) {
+		
 
-	//auto tp1 = std::chrono::system_clock::now();
-	//auto tp2 = std::chrono::system_clock::now();
-	std::bitset<16> scr[8192];
 
-	while (true)
-	{
-		cpu.getSCR(scr);
-		console.draw(scr);
+
+
 	}
-
 
 	return 0;
 }
