@@ -9,7 +9,6 @@ set(SOURCES
     src/CPU.cpp
     src/MEM_RAM.cpp
     src/MEM_ROM.cpp
-    src/consoleGUI.cpp
 )
 
 add_executable (hack-cpu-emulator ${SOURCES})

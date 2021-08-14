@@ -23,8 +23,3 @@ std::bitset<16> MEM_RAM::read(std::bitset<16> addr)
 {
 	return MEM_RAM::data[addr.to_ulong()];
 }
-
-const std::bitset<16>* MEM_RAM::getSCRAddr()
-{
-	return data;
-}

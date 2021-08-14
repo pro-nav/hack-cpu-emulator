@@ -133,8 +133,3 @@ void CPU::execute() {
 	}
 
 }
-
-const std::bitset<16>* CPU::getSCR()
-{
-	return RAM.getSCRAddr();
-}

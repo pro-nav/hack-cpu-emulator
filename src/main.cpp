@@ -6,7 +6,6 @@
 #include <sstream>
 
 #include "CPU.h"
-#include "consoleGUI.h"
 
 int main(int argc, char** argv) {
 
@@ -44,13 +43,9 @@ int main(int argc, char** argv) {
 
 	CPU cpu;
 	cpu.loadProgram(&program[0], program.size());
-
+	
 	while (true) {
-		
-
-
-
-
+		cpu.execute(); //Add breakpoint here to execute your program step by step
 	}
 
 	return 0;

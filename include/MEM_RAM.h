@@ -15,6 +15,5 @@ public:
 	void reset();
 	void write(std::bitset<16> addr, std::bitset<16> value);
 	std::bitset<16> read(std::bitset<16> addr);
-	const std::bitset<16>* getSCRAddr();
 };
 #endif // !MEM_RAM_H
